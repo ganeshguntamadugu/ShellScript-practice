@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #variables
-#Type-1 Normal
+echo "Type-1 Normal"
 echo "Ramesh: Hi Suresh. How are you?"
 echo "Suresh: Hello Ramesh. I'm fine, How are you doing"
 echo "Ramesh: Doing good Suresh"
@@ -10,8 +10,8 @@ echo "Ramesh: It's going good Suresh"
 echo "Suresh: Super Ramesh" 
 echo "Ramesh: yeah"
 
-#Type-2 we can declare values without touching code
 echo ""
+echo "Type-2 we can declare values without touching code"
 Person1=Ganesh
 Person2=Bhanuuu
 
@@ -23,8 +23,8 @@ echo "$Person1: It's going good $Person2"
 echo "$Person2: Super $Person1" 
 echo "$Person1: yeah"
 
-#Type-3 we can declare values without touching file
 echo ""
+echo "Type-3 we can declare values without touching file"
 echo "Arguments type"
 Person1=$1
 Person2=$2
@@ -36,10 +36,10 @@ echo "$Person1: It's going good $Person2"
 echo "$Person2: Super $Person1" 
 echo "$Person1: yeah"
 
-#Type-4 Secret 
-
+echo ""
+echo "Type-4 Secret" 
 echo "Enter your name: "
-#read "Name"
+read "Name"
 echo "$Name"
 echo "Enter your password: "
 read -s Password
