@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#variables
+Person1=Ramesh
+Person2=Suresh
+
+echo "$Person1: Hi $Person2. How are you?"
+echo "$Person2: Hello $Person1. I'm fine, How are you doing"
+echo "$Person1: Doing good $Person2"
+echo "$Person2: How is your DevOps preparation"
+echo "$Person1: It's going good $Person2"
+echo "$Person2: Super $Person1" 
+echo "$Person1: yeah"
