@@ -35,3 +35,12 @@ echo "$Person2: How is your DevOps preparation"
 echo "$Person1: It's going good $Person2"
 echo "$Person2: Super $Person1" 
 echo "$Person1: yeah"
+
+#Type-4 Secret 
+
+echo "Enter your name: "
+#read "Name"
+echo "$Name"
+echo "Enter your password: "
+read -s Password
+echo "$Password"
