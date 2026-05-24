@@ -10,6 +10,8 @@ echo "Ramesh: It's going good Suresh"
 echo "Suresh: Super Ramesh" 
 echo "Ramesh: yeah"
 
+#Type-2 we can declare values without touching code
+echo ""
 Person1=Ganesh
 Person2=Bhanuuu
 
@@ -21,6 +23,7 @@ echo "$Person1: It's going good $Person2"
 echo "$Person2: Super $Person1" 
 echo "$Person1: yeah"
 
+#Type-3 we can declare values without touching file
 echo ""
 echo "Arguments type"
 Person1=$1
