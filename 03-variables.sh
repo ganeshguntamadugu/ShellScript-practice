@@ -12,7 +12,7 @@ echo "$Person1: It's going good $Person2"
 echo "$Person2: Super $Person1" 
 echo "$Person1: yeah"
 
-
+echo ""
 echo "Arguments type"
 Person1=$1
 Person2=$2
