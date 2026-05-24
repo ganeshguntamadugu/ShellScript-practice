@@ -42,5 +42,5 @@ echo "Enter your name: "
 read "Name"
 echo "$Name"
 echo "Enter your password: "
-read -s Password
+read -s "Password"
 echo "$Password"
