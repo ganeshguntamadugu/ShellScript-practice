@@ -47,3 +47,6 @@ VALIDATE(){
 
 dnf list installed mysql
 VALIDATE $? MySQL
+
+dnf list installed nginx
+VALIDATE $? Nginx
