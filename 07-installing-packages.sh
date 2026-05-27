@@ -18,7 +18,7 @@ if [ $? -ne 0 ]
 then
     echo "Git is not installed, going to install"
     dnf install git -y
-    if [ $? -ne 0]
+    if [ $? -ne 0 ]
     then
         echo "Git is not install, Please check the error"
         exit 1
@@ -43,7 +43,7 @@ fi
 #checking status of msql Package
 
 dnf list installed mysql
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then 
     echo "MySQL is not installed, going to install"
     dnf install mysql -y
@@ -57,7 +57,7 @@ then
 else
     echo "MySQL is aleady installed, I'm deleting it and reinstalling it"
     dnf remove mysql -y
-    if [ $? -eq 0]
+    if [ $? -eq 0 ]
     then
         echo "MySQL is removed"
     fi
