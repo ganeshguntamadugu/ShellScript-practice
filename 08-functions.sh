@@ -14,7 +14,7 @@ VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo "$2 is not installed, going to install"
-        dnf install git -y
+        dnf install $3 -y
         if [ $? -ne 0 ]
         then
             echo "$2 is not install, Please check the error"
@@ -25,12 +25,12 @@ VALIDATE(){
     else
         #echo "$2 is already installed, nothing to do"
         echo "MySQL is aleady installed, I'm deleting it and reinstalling it"
-        dnf remove mysql -y
+        dnf remove $3 -y
         if [ $? -eq 0 ]
         then
             echo "MySQL is removed"
         fi
-        dnf install mysql -y
+        dnf install $3 -y
         if [ $? -ne 0 ]
         then
             echo "MySQL is not install, check the error"
@@ -46,7 +46,7 @@ VALIDATE(){
 # VALIDATE $? Git
 
 dnf list installed mysql
-VALIDATE $? MySQL
+VALIDATE $? MySQL mysql
 
 dnf list installed nginx
-VALIDATE $? Nginx
+VALIDATE $? Nginx nginx
