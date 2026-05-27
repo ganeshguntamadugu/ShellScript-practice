@@ -9,6 +9,7 @@ then
     exit 1
 else 
     echo "Proceeding to install your requested Package"
+fi
 
 #Check if git installed already or not
 dnf list installed git
