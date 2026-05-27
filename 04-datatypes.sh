@@ -13,6 +13,6 @@ echo "Today's date is $Date"
 
 #Adding two numbers
 Number1=$1
-Number2=$a
+Number2=$2
 Sum=$(($Number1+$Number2))
 echo "The total of $Number1 & $Number2 is $Sum"
