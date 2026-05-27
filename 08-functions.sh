@@ -24,19 +24,19 @@ VALIDATE(){
         fi
     else
         #echo "$2 is already installed, nothing to do"
-        echo "MySQL is aleady installed, I'm deleting it and reinstalling it"
+        echo "$2 is aleady installed, I'm deleting it and reinstalling it"
         dnf remove $3 -y
         if [ $? -eq 0 ]
         then
-            echo "MySQL is removed"
+            echo "$2 is removed"
         fi
         dnf install $3 -y
         if [ $? -ne 0 ]
         then
-            echo "MySQL is not install, check the error"
+            echo "$2 is not install, check the error"
             exit 1
         else
-            echo "MySQL reinstalled Successfully"
+            echo "$2 reinstalled Successfully"
         fi
     fi
 }
