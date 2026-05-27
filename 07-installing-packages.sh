@@ -56,12 +56,17 @@ then
     fi
 else
     echo "MySQL is aleady installed, I'm deleting it and reinstalling it"
-    dnf remove MySQl
+    dnf remove mysql -y
+    if [ $? -eq 0]
+    then
+        echo "MySQL is removed"
+    fi
+    dnf install mysql -y
     if [ $? -ne 0 ]
     then
         echo "MySQL is not install, check the error"
         exit 1
     else
-        echo "MySQL installation is Successful"
+        echo "MySQL reinstalled Successfully"
     fi
 fi
