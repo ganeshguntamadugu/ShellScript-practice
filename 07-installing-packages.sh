@@ -8,7 +8,7 @@ then
     echo "Get the root access"
     exit 1
 else 
-    echo "Proceeding to install your requested Package"
+    echo "Proceeding to install your requested Package Git"
 fi
 
 #Check if git installed already or not
@@ -37,7 +37,7 @@ then
     echo "Get the root access"
     exit 1
 else
-    echo "Proceeding to install your requested Package" 
+    echo "Proceeding to install your requested Package MySQL" 
 fi
 
 #checking status of msql Package
@@ -55,5 +55,13 @@ then
         echo "MySQL installation is Successful"
     fi
 else
-    echo "MySQL is aleady installed"
+    echo "MySQL is aleady installed, I'm deleting it and reinstalling it"
+    dnf remove MySQl
+    if [ $? -ne 0 ]
+    then
+        echo "MySQL is not install, check the error"
+        exit 1
+    else
+        echo "MySQL installation is Successful"
+    fi
 fi
