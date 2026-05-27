@@ -6,3 +6,8 @@ Fruits=("apple" "banana" "orange")
 
 echo ${Fruits[0]}
 echo ${Fruits[@]}
+
+#How to run a command inside shell script
+
+Date=$(date +%F)
+echo "Today's date is $Date"
