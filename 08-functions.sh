@@ -2,8 +2,7 @@
 
 #Functions
 
-
-VALIDATE(){
+CLARITY(){
     USERID=$(id -u)
 
     if [ $USERID -ne 0 ]
@@ -13,7 +12,9 @@ VALIDATE(){
     else 
         echo "Proceeding to install your requested Package $2"
     fi
-        
+}
+
+VALIDATE(){    
     if [ $1 -ne 0 ]
     then 
         echo "$2 is not installed, going to install"
@@ -30,12 +31,14 @@ VALIDATE(){
     fi
 }
 
-
+CLARITY $2
 dnf list installed git
 VALIDATE $? Git git
 
+CLARITY $2
 dnf list installed mysql
 VALIDATE $? MySQL mysql
 
+CLARITY $2
 dnf list installed nginx
 VALIDATE $? Nginx nginx
