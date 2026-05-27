@@ -28,3 +28,32 @@ then
 else
     echo "Git is already installed, nothing to do"
 fi
+
+#Installing mysql
+USERID=$(id -u)
+
+if [ $USERID -ne 0 ]
+then
+    echo "Get the root access"
+    exit 1
+else
+    echo "Proceeding to install your requested Package" 
+fi
+
+#checking status of msql Package
+
+dnf list installed mysql
+if [ $? -ne 0]
+then 
+    echo "MySQL is not installed, going to install"
+    dnf install mysql -y
+    if [ $? -ne 0 ]
+    then
+        echo "MySQL is not install, check the error"
+        exit 1
+    else
+        echo "MySQL installation is Successful"
+    fi
+else
+    echo "MySQL is aleady installed"
+fi
