@@ -10,7 +10,7 @@ CLARITY(){
         echo "Get the root access"
         exit 1
     else 
-        echo "Proceeding to install your requested Package $2"
+        echo "Proceeding to install your requested Package $1"
     fi
 }
 
@@ -31,14 +31,14 @@ VALIDATE(){
     fi
 }
 
-CLARITY $2
+CLARITY Git
 dnf list installed git
 VALIDATE $? Git git
 
-CLARITY $2
+CLARITY MySQL
 dnf list installed mysql
 VALIDATE $? MySQL mysql
 
-CLARITY $2
+CLARITY Nginx
 dnf list installed nginx
 VALIDATE $? Nginx nginx
