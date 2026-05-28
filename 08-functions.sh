@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#Color 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+
 #Functions
 
 CLARITY(){
@@ -43,7 +48,3 @@ CLARITY Nginx
 dnf list installed nginx
 VALIDATE $? Nginx nginx
 
-#Color 
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
