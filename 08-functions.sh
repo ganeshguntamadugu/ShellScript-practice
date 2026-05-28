@@ -17,17 +17,17 @@ CLARITY(){
 VALIDATE(){    
     if [ $1 -ne 0 ]
     then 
-        echo -e "$2 is $R NOT installed, going to install"
+        echo -e "$2 is $R NOT $N installed, going to install"
         dnf install $3 -y
         if [ $? -ne 0 ]
         then
             echo "$2 is not install, check the error"
             exit 1
         else
-            echo -e "$2 installation is $G Successful"
+            echo -e "$2 installation is $G Successful $N"
         fi
     else
-        echo "$2 is already installed, nothing to do"
+        echo -e "$2 is $G Already $N installed, nothing to do"
     fi
 }
 
