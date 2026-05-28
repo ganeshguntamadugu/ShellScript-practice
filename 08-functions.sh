@@ -17,14 +17,14 @@ CLARITY(){
 VALIDATE(){    
     if [ $1 -ne 0 ]
     then 
-        echo "$2 is not installed, going to install"
+        echo -e "$2 is $R NOT installed, going to install"
         dnf install $3 -y
         if [ $? -ne 0 ]
         then
             echo "$2 is not install, check the error"
             exit 1
         else
-            echo "$2 installation is Successful"
+            echo -e "$2 installation is $G Successful"
         fi
     else
         echo "$2 is already installed, nothing to do"
@@ -42,3 +42,8 @@ VALIDATE $? MySQL mysql
 CLARITY Nginx
 dnf list installed nginx
 VALIDATE $? Nginx nginx
+
+#Color 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
