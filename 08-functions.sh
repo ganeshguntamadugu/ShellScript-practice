@@ -6,6 +6,7 @@ G="\e[32m"
 N="\e[0m"
 
 #Functions
+Packageinput=$@
 
 CLARITY(){
     USERID=$(id -u)
@@ -36,15 +37,26 @@ VALIDATE(){
     fi
 }
 
+# CLARITY Git
+# dnf list installed git
+# VALIDATE $? Git git
+
+# CLARITY MySQL
+# dnf list installed mysql
+# VALIDATE $? MySQL mysql
+
+# CLARITY Nginx
+# dnf list installed nginx
+# VALIDATE $? Nginx nginx
+
 CLARITY Git
-dnf list installed git
-VALIDATE $? Git git
+dnf list installed $Packageinput
+VALIDATE $? Git $Packageinput
 
 CLARITY MySQL
-dnf list installed mysql
-VALIDATE $? MySQL mysql
+dnf list installed $Packageinput
+VALIDATE $? MySQL $Packageinput
 
 CLARITY Nginx
-dnf list installed nginx
-VALIDATE $? Nginx nginx
-
+dnf list installed $Packageinput
+VALIDATE $? Nginx $Packageinput
