@@ -35,10 +35,9 @@ VALIDATE(){
     fi
 }
 
-CLARITY $package
-
 for package in $@ 
 do 
+    CLARITY $package
     dnf list installed $package
     VALIDATE $? $package
 done
