@@ -37,7 +37,7 @@ VALIDATE(){
 
 for package in $@ 
 do 
-    CLARITY $@
-    dnf list installed $@
-    VALIDATE $? $@
+    CLARITY $package
+    dnf list installed $package
+    VALIDATE $? $package
 done
