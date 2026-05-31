@@ -13,6 +13,8 @@ CLARITY(){
     then 
         echo "Get the root access"
         exit 1
+    else 
+        echo "Proceeding to install your requested Package $1"
     fi
 }
 
@@ -33,11 +35,9 @@ VALIDATE(){
     fi
 }
 
-CLARITY 
-
 for package in $@ 
 do 
-    echo "Proceeding to install your requested Package $package"
+    CLARITY $package
     dnf list installed $package
     VALIDATE $? $package
 done
