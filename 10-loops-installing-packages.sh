@@ -25,7 +25,7 @@ VALIDATE(){
         dnf install $2 -y
         if [ $? -ne 0 ]
         then
-            echo "$2 is not install, check the error"
+            echo "$2 is not installed, check the error"
             exit 1
         else
             echo -e "$2 installation is $G Successful $N"
@@ -35,9 +35,10 @@ VALIDATE(){
     fi
 }
 
+CLARITY $package
+
 for package in $@ 
 do 
-    CLARITY $package
     dnf list installed $package
     VALIDATE $? $package
 done
