@@ -14,13 +14,13 @@ echo "10"
 
 #Using Loops to print numbers
 
-for i in 1,2,3,4,5,6,7,8,9
+for i in 1 2 3 4 5 6 7 8 9
 do 
     echo "$i"
 done
 
 #This is another simple way to use Loops
-for i in 1..100
+for i in {1..100} #It means 1 to 100
 do
     echo "$i"
 done
