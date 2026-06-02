@@ -1,18 +1,18 @@
 #!/bin/bash
 
 #This is very tough
-echo "1"
-echo "2"
-echo "3"
-echo "4"
-echo "5"
-echo "6"
-echo "7"
-echo "8"
-echo "9"
-echo "10"
+# echo "1"
+# echo "2"
+# echo "3"
+# echo "4"
+# echo "5"
+# echo "6"
+# echo "7"
+# echo "8"
+# echo "9"
+# echo "10"
 
-echo ""
+# echo ""
 
 # #Using Loops to print numbers
 # for i in 1 2 3 4 5 6 7 8 9
@@ -30,10 +30,10 @@ echo ""
 
 # echo ""
 
-if [$# -eq 0]
+if [ $# -eq 0 ]
 then
     echo "Please give any input like {0..100} to get the output"
-    exit 1
+    # exit 1
 fi
 
 for i in $@ #Giving output from out side
