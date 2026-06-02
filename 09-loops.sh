@@ -33,6 +33,7 @@ echo ""
 if [$# -eq 0]
 then
     echo "Please give any input like {0..100} to get the output"
+    exit 1
 fi
 
 for i in $@ #Giving output from out side
