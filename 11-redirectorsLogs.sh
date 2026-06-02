@@ -41,15 +41,16 @@ VALIDATE(){
 }
 
 INPUT(){
-    if [ $# -eq 0 ]
-    then
-        echo "Please give any packages names to intall it" &>>$Log_file
-        exit 1
-    fi
+    echo "Please give any packages names to intall it" &>>$Log_file
+    exit 1
 }
 
 ROOT_ACCESS
-INPUT $@
+
+if [ $# -eq 0 ]
+then
+    INPUT
+fi
 
 #Using loops
 for package in $@ # $@ refers to all arguments passed to it
