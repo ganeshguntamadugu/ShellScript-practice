@@ -1,8 +1,10 @@
 #!/bin/bash
 
-Log_folder=/var/log/shellscript-practice
-Script_name=$(echo $0 | cut -d "." -f1)
-Log_file=$Log_folder/$Script_name-$(date +"%B,%d,%Y-%T").log
+Logfile-Setup(){
+    Log_folder=/var/log/shellscript-practice
+    Script_name=$(echo $0 | cut -d "." -f1)
+    Log_file=$Log_folder/$Script_name-$(date +"%B,%d,%Y-%T").log
+}
 
 mkdir -p $Log_folder
 
@@ -51,6 +53,7 @@ INPUT(){
 echo "Script started executing at $(date)" | tee -a &>>$Log_file
 
 ROOT_ACCESS
+Logfile-Setup
 INPUT $@
 
 #Using loops
