@@ -29,17 +29,17 @@ ROOT_ACCESS(){
 VALIDATE(){    
     if [ $1 -ne 0 ]
     then 
-        echo -e "$2 is$R NOT$N installed, going to install" | tee -a &>>$Log_file
+        echo -e "$2 is$R NOT$N installed, going to install" | tee -a $Log_file
         dnf install $2 -y &>>$Log_file
         if [ $? -ne 0 ]
         then
-            echo -e "$2 is $R not$N installed, check the error" | tee -a &>>$Log_file
+            echo -e "$2 is $R not$N installed, check the error" | tee -a $Log_file
             exit 1
         else
-            echo -e "$2 installation is$G Successful$N" | tee -a &>>$Log_file
+            echo -e "$2 installation is$G Successful$N" | tee -a $Log_file
         fi
     else
-        echo -e "$2 is$Y Already$N installed, nothing to do" | tee -a &>>$Log_file
+        echo -e "$2 is$Y Already$N installed, nothing to do" | tee -a $Log_file
     fi
 }
 
@@ -52,19 +52,21 @@ INPUT(){
 }
 
 Logfile_Setup
-echo "Script started executing at $(date)" | tee -a &>>$Log_file
 
 ROOT_ACCESS
 
 INPUT $@
 
+echo "Script started executing at $(date)" | tee -a $Log_file
+
+
 #Using loops
 for package in $@ # $@ refers to all arguments passed to it
 do
-    echo "" | tee -a &>>$Log_file
-    echo "Proceeding to install your requested Package $package" | tee -a &>>$Log_file
+    echo "" | tee -a $Log_file
+    echo "Proceeding to install your requested Package $package" | tee -a $Log_file
     dnf list installed $package &>>$Log_file
     VALIDATE $? $package
 done
 
-echo "Script completed executing at $(date)" | tee -a &>>$Log_file
+echo "Script completed executing at $(date)" | tee -a $Log_file
