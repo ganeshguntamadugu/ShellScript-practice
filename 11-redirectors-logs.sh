@@ -49,11 +49,11 @@ INPUT(){
 }
 
 INPUT
-CLARITY $package
+CLARITY
 #Using loops
 for package in $@ 
 do
-    echo "Proceeding to install your requested Package $1" &>>$Log_file
+    echo "Proceeding to install your requested Package $package" &>>$Log_file
     dnf list installed $package &>>$Log_file
     VALIDATE $? $package
 done
