@@ -47,6 +47,7 @@ INPUT(){
         exit 1
     fi
 }
+echo "Script started executing at $(date)"
 
 ROOT_ACCESS
 INPUT $@
