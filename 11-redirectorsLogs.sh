@@ -54,7 +54,7 @@ INPUT $@
 #Using loops
 for package in $@ # $@ refers to all arguments passed to it
 do
-    echo ""
+    echo "" &>>$Log_file
     echo "Proceeding to install your requested Package $package" &>>$Log_file
     dnf list installed $package &>>$Log_file
     VALIDATE $? $package
