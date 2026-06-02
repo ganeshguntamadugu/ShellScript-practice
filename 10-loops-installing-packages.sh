@@ -35,6 +35,7 @@ VALIDATE(){
         echo -e "$2 is$Y Already$N installed, nothing to do"
     fi
 }
+#Using loops
 
 for package in $@ 
 do 

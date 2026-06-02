@@ -27,3 +27,8 @@ for i in {1..100} #It means 1 to 100
 do
     echo "$i"
 done
+
+for i in $@ #It means 1 to 100
+do
+    echo "$i"
+done
