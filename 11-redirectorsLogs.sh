@@ -4,9 +4,10 @@ Logfile_Setup(){
     Log_folder=/var/log/shellscript-practice
     Script_name=$(echo $0 | cut -d "." -f1)
     Log_file=$Log_folder/$Script_name-$(date +"%B,%d,%Y-%T").log
+    mkdir -p $Log_folder
 }
 
-mkdir -p $Log_folder
+
 
  #Color 
 R="\e[31m"
