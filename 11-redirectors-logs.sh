@@ -26,24 +26,24 @@ ROOT_ACCESS(){
 VALIDATE(){    
     if [ $1 -ne 0 ]
     then 
-        echo -e "$2 is$R NOT$N installed, going to install" 
+        echo -e "$2 is$R NOT$N installed, going to install" &>>$Log_file
         dnf install $2 -y
         if [ $? -ne 0 ]
         then
-            echo -e "$2 is $R not$N installed, check the error" 
+            echo -e "$2 is $R not$N installed, check the error" &>>$Log_file
             exit 1
         else
-            echo -e "$2 installation is$G Successful$N" 
+            echo -e "$2 installation is$G Successful$N" &>>$Log_file
         fi
     else
-        echo -e "$2 is$Y Already$N installed, nothing to do" 
+        echo -e "$2 is$Y Already$N installed, nothing to do" &>>$Log_file
     fi
 }
 
 INPUT(){
     if [ $# -eq 0 ]
     then
-        echo "Please give any packages names to intall it"
+        echo "Please give any packages names to intall it" &>>$Log_file
         exit 1
     fi
 }
@@ -55,7 +55,7 @@ INPUT $@
 for package in $@ # $@ refers to all arguments passed to it
 do
     echo ""
-    echo "Proceeding to install your requested Package $package"
-    dnf list installed $package 
+    echo "Proceeding to install your requested Package $package" &>>$Log_file
+    dnf list installed $package &>>$Log_file
     VALIDATE $? $package
 done
