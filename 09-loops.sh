@@ -22,13 +22,20 @@ echo ""
 
 # echo ""
 
-# #This is another simple way to use Loops
+# # #This is another simple way to use Loops
 # for i in {1..100} #It means 1 to 100
 # do
 #     echo "$i"
 # done
 
-for i in $@ #It means 1 to 100
+# echo ""
+
+if [$# -eq 0]
+then
+    echo "Please give any input like {0..100} to get the output"
+fi
+
+for i in $@ #Giving output from out side
 do
     echo "$i"
 done
