@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Logfile-Setup(){
+Logfile_Setup(){
     Log_folder=/var/log/shellscript-practice
     Script_name=$(echo $0 | cut -d "." -f1)
     Log_file=$Log_folder/$Script_name-$(date +"%B,%d,%Y-%T").log
@@ -53,7 +53,7 @@ INPUT(){
 echo "Script started executing at $(date)" | tee -a &>>$Log_file
 
 ROOT_ACCESS
-Logfile-Setup
+Logfile_Setup
 INPUT $@
 
 #Using loops
