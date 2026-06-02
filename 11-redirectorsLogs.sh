@@ -51,10 +51,11 @@ INPUT(){
     fi
 }
 
+Logfile_Setup
 echo "Script started executing at $(date)" | tee -a &>>$Log_file
 
 ROOT_ACCESS
-Logfile_Setup
+
 INPUT $@
 
 #Using loops
