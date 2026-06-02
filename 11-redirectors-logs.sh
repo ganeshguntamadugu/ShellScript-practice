@@ -13,15 +13,13 @@ Y="\e[33m"
 N="\e[0m"
 
 #Functions
-CLARITY(){
+ROOT_ACCESS(){
     USERID=$(id -u)
 
     if [ $USERID -ne 0 ]
     then 
         echo "Get the root access"
-        exit 1
-    else 
-        echo "Proceeding to install your requested Package $1"
+        exit 1  
     fi
 }
 
@@ -50,11 +48,12 @@ INPUT(){
     fi
 }
 
+ROOT_ACCESS
 INPUT
 #Using loops
 for package in $@ 
-do 
-    CLARITY $package
+do
+    echo "Proceeding to install your requested Package $package"
     dnf list installed $package
     VALIDATE $? $package
 done
