@@ -4,7 +4,7 @@ Log_folder=/var/log/shellscript-practice
 Script_name=$(echo $#) | awk -F "." '{print $1F}'
 Log_file=$Log_folder/$Script_name/$(date).log
 
-mkdir $Log_folder
+mkdir -p $Log_folder
 
  #Color 
 R="\e[31m"
@@ -41,8 +41,14 @@ VALIDATE(){
         echo -e "$2 is$Y Already$N installed, nothing to do" &>>$Log_file
     fi
 }
-#Using loops
 
+if [ $# -eq 0 ]
+then
+    echo "Please give any packages names to intall it"
+    exit 1
+fi
+
+#Using loops
 for package in $@ 
 do 
     CLARITY $package
