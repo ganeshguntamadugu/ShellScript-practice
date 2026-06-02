@@ -35,9 +35,9 @@ VALIDATE(){
         echo -e "$2 is$Y Already$N installed, nothing to do"
     fi
 }
-#Using loops
 
-for package in $@ 
+#Using loops
+for package in $@  # $@ refers to all arguments passed to it
 do 
     ROOT_ACCESS $package
     dnf list installed $package
