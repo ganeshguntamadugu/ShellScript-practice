@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Log_folder=/var/log/shellscript-practice
-# Script_name=$(echo $0) | awk -F "." '{print $1F}'
-# Log_file=$Log_folder/$Script_name-$(date "+%A, %B %d %Y %T").log
+Log_folder=/var/log/shellscript-practice
+Script_name=$(echo $0) | awk -F "." '{print $1F}'
+Log_file=$Log_folder/$Script_name-$(date "+%A, %B %d %Y %T").log
 
-# mkdir -p $Log_folder
+mkdir -p $Log_folder
 
  #Color 
 R="\e[31m"

@@ -7,7 +7,7 @@ N="\e[0m"
 
 #Functions
 
-CLARITY(){
+ROOT_ACCESS(){
     USERID=$(id -u)
 
     if [ $USERID -ne 0 ]
@@ -36,15 +36,15 @@ VALIDATE(){
     fi
 }
 
-CLARITY Git
+ROOT_ACCESS Git
 dnf list installed git
 VALIDATE $? Git git
 
-CLARITY MySQL
+ROOT_ACCESS MySQL
 dnf list installed mysql
 VALIDATE $? MySQL mysql
 
-CLARITY Nginx
+ROOT_ACCESS Nginx
 dnf list installed nginx
 VALIDATE $? Nginx nginx
 
