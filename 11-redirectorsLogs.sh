@@ -51,9 +51,9 @@ INPUT(){
     fi
 }
 
-Logfile_Setup
-
 ROOT_ACCESS
+
+Logfile_Setup
 
 INPUT $@
 
