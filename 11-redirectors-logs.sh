@@ -49,7 +49,7 @@ INPUT(){
 }
 
 ROOT_ACCESS
-INPUT
+INPUT $@
 #Using loops
 for package in $@ 
 do
