@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Functions
 Logfile_Setup(){
     Log_folder=/var/log/shellscript-practice
     Script_name=$(echo $0 | cut -d "." -f1)
@@ -8,14 +9,13 @@ Logfile_Setup(){
 }
 
 
-
  #Color 
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-#Functions
+
 ROOT_ACCESS(){
     USERID=$(id -u)
 
@@ -25,6 +25,7 @@ ROOT_ACCESS(){
         exit 1  
     fi
 }
+
 
 VALIDATE(){    
     if [ $1 -ne 0 ]
@@ -43,6 +44,7 @@ VALIDATE(){
     fi
 }
 
+
 INPUT(){
     if [ $# -eq 0 ]
     then
@@ -50,6 +52,9 @@ INPUT(){
         exit 1
     fi
 }
+
+
+#The main script runs from here
 
 ROOT_ACCESS
 
