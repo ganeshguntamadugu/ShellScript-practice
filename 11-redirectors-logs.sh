@@ -50,11 +50,10 @@ INPUT(){
     fi
 }
 
-
+INPUT
 #Using loops
 for package in $@ 
 do 
-    INPUT
     CLARITY $package
     dnf list installed $package &>>$Log_file
     VALIDATE $? $package
