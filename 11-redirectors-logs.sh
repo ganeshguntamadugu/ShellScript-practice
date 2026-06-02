@@ -26,17 +26,17 @@ ROOT_ACCESS(){
 VALIDATE(){    
     if [ $1 -ne 0 ]
     then 
-        echo -e "$2 is$R NOT$N installed, going to install" &>>$Log_file
+        echo -e "$2 is$R NOT$N installed, going to install" 
         dnf install $2 -y
         if [ $? -ne 0 ]
         then
-            echo -e "$2 is $R not$N installed, check the error" &>>$Log_file
+            echo -e "$2 is $R not$N installed, check the error" 
             exit 1
         else
-            echo -e "$2 installation is$G Successful$N" &>>$Log_file
+            echo -e "$2 installation is$G Successful$N" 
         fi
     else
-        echo -e "$2 is$Y Already$N installed, nothing to do" &>>$Log_file
+        echo -e "$2 is$Y Already$N installed, nothing to do" 
     fi
 }
 
