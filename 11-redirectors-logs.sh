@@ -1,7 +1,7 @@
 #!/bin/bash
 
 Log_folder=/var/log/shellscript-practice
-Script_name=$(echo $#) | awk -F "." '{print $F }'
+Script_name=$(echo $#) | awk -F "." '{print $1F}'
 Log_file=$Log_folder $Script_name $(date).log
 
 mkdir $Log_folder
