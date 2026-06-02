@@ -2,7 +2,7 @@
 
 Log_folder=/var/log/shellscript-practice
 Script_name=$(echo $#) | awk -F "." '{print $1F}'
-Log_file=$Log_folder/$Script_name/$(date).log
+Log_file=$Log_folder/$Script_name-$(date "+%A, %B %d %Y %T").log
 
 mkdir -p $Log_folder
 
@@ -42,15 +42,19 @@ VALIDATE(){
     fi
 }
 
-if [ $# -eq 0 ]
-then
-    echo "Please give any packages names to intall it"
-    exit 1
-fi
+INPUT(){
+    if [ $# -eq 0 ]
+    then
+        echo "Please give any packages names to intall it"
+        exit 1
+    fi
+}
+
 
 #Using loops
 for package in $@ 
 do 
+    INPUT
     CLARITY $package
     dnf list installed $package &>>$Log_file
     VALIDATE $? $package
