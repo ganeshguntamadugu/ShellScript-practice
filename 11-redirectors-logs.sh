@@ -55,6 +55,6 @@ INPUT $@
 for package in $@ # $@ refers to all arguments passed to it
 do
     echo "Proceeding to install your requested Package $package"
-    dnf list installed $package &>>$Log_file
+    dnf list installed $package 
     VALIDATE $? $package
 done
