@@ -60,3 +60,5 @@ do
     dnf list installed $package &>>$Log_file
     VALIDATE $? $package
 done
+
+echo "Script completed executing at $(date)"
