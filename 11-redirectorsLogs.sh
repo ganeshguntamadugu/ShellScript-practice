@@ -69,5 +69,5 @@ do
     VALIDATE $? $package
 done
 
-echo ""
+echo "" | tee -a $Log_file
 echo "Script completed executing at $(date)" | tee -a $Log_file
