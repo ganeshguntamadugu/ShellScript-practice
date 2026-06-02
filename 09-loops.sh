@@ -36,7 +36,7 @@ then
     # exit 1
 fi
 
-for i in $@ #Giving output from out side
+for i in {1..9} #Giving output from out side
 do
     echo "$i"
 done
