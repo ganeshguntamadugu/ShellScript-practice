@@ -20,8 +20,6 @@ CLARITY(){
     then 
         echo "Get the root access" &>>$Log_file
         exit 1
-    else 
-        echo "Proceeding to install your requested Package $1" &>>$Log_file
     fi
 }
 
@@ -51,10 +49,11 @@ INPUT(){
 }
 
 INPUT
+CLARITY $package
 #Using loops
 for package in $@ 
-do 
-    CLARITY $package
+do
+    echo "Proceeding to install your requested Package $1" &>>$Log_file
     dnf list installed $package &>>$Log_file
     VALIDATE $? $package
 done
