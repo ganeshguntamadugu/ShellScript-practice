@@ -16,7 +16,7 @@ else
     echo -e "$Directory$R doesn't exits$N"
 fi
 
-Files=$(find $Directory -name "*.log" -mtime +14)
+Files=$(find $Directory -name "*.logs" -mtime +14)
 echo "$Files"
 
 # while IFS= read -r file
