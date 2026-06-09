@@ -20,10 +20,10 @@ echo ""
 Files=$(find $Directory -name "*.logs" -mtime +14)
 echo "$Files"
 
-# echo ""
+echo ""
 
-while IFS= read -r file
+while IFS= read -r line
 do
-    echo "Deleting file $file"
-    rm -rf $file
+    echo "Deleting file $line"
+    rm -rf $line
 done <<< $Files
