@@ -19,8 +19,8 @@ fi
 Files=$(find $Directory -name "*.log" -mtime +14)
 echo "$Files"
 
-while IFS= read -r file
-do
-    echo "Deleting file $file"
-    rm -rf $file
-done <<< $Files
+# while IFS= read -r file
+# do
+#     echo "Deleting file $file"
+#     rm -rf $file
+# done <<< $Files
