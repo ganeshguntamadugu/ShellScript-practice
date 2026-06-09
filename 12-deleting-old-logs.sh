@@ -14,16 +14,16 @@ then
     echo -e "$Directory is$G exits$N"
 else 
     echo -e "$Directory$R doesn't exits$N"
+    exit 1
 fi
 
-# echo ""
+echo ""
 Files=$(find $Directory -name "*.logs" -mtime +14)
 echo "$Files"
 
-# echo ""
-
-while IFS= read -r line
+echo ""
+while IFS= read -r file
 do
-    echo "Deleting file $line"
+    echo "Deleting file $file"
     # rm -rf $file
 done <<< $Files
