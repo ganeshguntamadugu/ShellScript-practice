@@ -16,11 +16,11 @@ else
     echo -e "$Directory$R doesn't exits$N"
 fi
 
-Files=$(find $Directory -name "*log" -mtime +14)
+Files=$(find $Directory -name "*.log" -mtime +14)
 echo "$Files"
 
-while IFS= read -r line
+while IFS= read -r file
 do
-    echo "Deleting file $line"
-    rm -rf $line
+    echo "Deleting file $file"
+    rm -rf $file
 done <<< $Files
