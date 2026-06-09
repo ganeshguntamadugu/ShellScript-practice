@@ -11,9 +11,9 @@ N="\e[0m"
 
 if [ -d $Directory ]
 then
-    echo "$Directory is$G exits$N"
+    echo -e "$Directory is$G exits$N"
 else 
-    echo "$Directory$R doesn't exits$N"
+    echo -e "$Directory$R doesn't exits$N"
 fi
 
 Files=$(find $Directory -name "*log" -mtime +14)
