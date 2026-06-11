@@ -22,7 +22,7 @@ Files=$(find $Directory -name "*.logs" -mtime +14)
 echo "$Files"
 
 echo ""
-while IFS= read -r file #IFS, internal field seperator, empty it will ignore ahile space 
+while IFS= read -r file #IFS, internal field seperator, empty it will ignore while space 
 do
     echo "Deleting file $file"
     rm -rf $file
