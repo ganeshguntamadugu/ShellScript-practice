@@ -3,6 +3,7 @@
 cd /home/ec2-user
 mkdir -p logs
 
+cd logs
 touch cat.log
 touch bat.java
 touch -d 20250702 rat.log
