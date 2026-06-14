@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p logs
 #Variables
 Directory=/home/ec2-user/logs
 
@@ -18,7 +19,7 @@ else
 fi
 
 echo ""
-Files=$(find $Directory -name "*.logs" -mtime +14)
+Files=$(find $Directory -name "*.log" -mtime +14)
 echo "$Files"
 
 echo ""
