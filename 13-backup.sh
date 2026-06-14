@@ -13,7 +13,7 @@ fi
 SOURCE="$1"
 DEST="$2"
 
-if [ ! -f "$SOURCE" ]; then
+if [ ! -d "$SOURCE" ]; then
   echo "Error: source file '$SOURCE' does not exist or is not a regular file."
   exit 2
 fi
