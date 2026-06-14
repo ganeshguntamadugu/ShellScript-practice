@@ -23,8 +23,8 @@ Files=$(find $Directory -name "*.log" -mtime +14)
 echo "$Files"
 
 echo ""
-while IFS= read -r line #IFS, internal field seperator, empty it will ignore while space, -r is for not to ignore special charecters like /
+while IFS= read -r gana #IFS, internal field seperator, empty it will ignore while space, -r is for not to ignore special charecters like /
 do
-    echo "Deleting file $line"
-    rm -rf $line
+    echo "Deleting file $gana"
+    rm -rf $gana
 done <<< $Files 
